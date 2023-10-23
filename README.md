@@ -3,7 +3,7 @@ This repo is the official implementation for CI-STFormer: <u>Action Jitter Kille
 
 ## architecture of CI-STFormer
 
-
+https://github.com/Xdu-Liu/CI-STFormer/blob/main/src/architecture.png
 
 
 # Prerequisites
