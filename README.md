@@ -1,7 +1,7 @@
-# Auto-Learning-GCN
-This repo is the official implementation for Auto-Learning-GCN: <u>An Ingenious Framework for Skeleton-based Action Recognition<u>
+# CI-STFormer
+This repo is the official implementation for CI-STFormer: <u>Action Jitter Killer: Joint Noise Optimization Cascade for Skeleton-based Recognition<u>
 
-## architecture of Auto-Learning-GCN
+## architecture of CI-STFormer
 
 
 
