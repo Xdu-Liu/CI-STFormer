@@ -1,0 +1,13 @@
+torchpack==0.2.2
+torchvision==0.2.1
+tornado==5.1
+tqdm==4.53.0
+traitlets==4.3.2
+typing-extensions==3.7.4.3
+urllib3==1.22
+wcwidth==0.1.7
+webencodings==0.5.1
+Werkzeug==1.0.1
+widgetsnbextension==3.4.2
+yacs==0.1.8
+zipp==3.4.0

@@ -1,0 +1,51 @@
+work_dir: ./work_dir/ntu60/xsub/ctrgcn_joint
+# python main.py --config config/nturgbd-cross-subject/default-uva.yaml --model model.trans-14-2-05-uva.Model --work-dir work_dir/ntu/cs/trans-14-2-05-uva --device 0 1
+
+# feeder
+feeder: feeders.feeder_uva.Feeder
+train_feeder_args:
+  data_path: /home/l01/Project/data/uva/UAV-Human_CSv2.npz
+  split: train
+  debug: False
+  random_choose: False
+  random_shift: False
+  random_move: False
+  window_size: 64
+  normalization: False
+  random_rot: True
+  p_interval: [0.5, 1]
+  vel: False
+  bone: False
+
+test_feeder_args:
+  data_path: /home/l01/Project/data/uva/UAV-Human_CSv2.npz
+  split: test
+  window_size: 64
+  p_interval: [0.95]
+  vel: False
+  bone: False
+  debug: False
+
+# model
+model: model.CI_STF.Model
+model_args:
+  num_class: 155
+  num_point: 17
+  num_person: 2
+  graph: graph.uva.Graph
+  graph_6: graph.uva_6.Graph
+  graph_args:
+    labeling_mode: 'spatial'
+
+#optim
+weight_decay: 0.0005
+base_lr: 0.1
+step: [35,55]
+warm_up_epoch: 5
+
+# training
+device: [0]
+batch_size: 64
+test_batch_size: 64
+num_epoch: 65
+nesterov: True
