@@ -2,8 +2,8 @@
 This repo is the official implementation for CI-STFormer: <u>Action Jitter Killer: Joint Noise Optimization Cascade for Skeleton-based Recognition<u>
 
 ## architecture of CI-STFormer
+<img src="https://github.com/Xdu-Liu/CI-STFormer/blob/main/src/architecture.png">
 
-https://github.com/Xdu-Liu/CI-STFormer/blob/main/src/architecture.png
 
 
 # Prerequisites
