@@ -100,23 +100,23 @@ The pre-processed UAV data can be referred [here](https://drive.google.com/drive
 ### Training
 + Change the config file depending on what you want.
 ~~~
-    # Example: training AL-GCN on NTU RGB+D cross subject with GPU 0
-    python main.py --config config/nturgbd-cross-subject/default.yaml --work-dir work_dir/ntu120/csub/algcn --device 0
+    # Example: training CI-STF on NTU RGB+D cross subject with GPU 0
+    python main.py --config config/nturgbd-cross-subject/default.yaml --work-dir work_dir/ntu120/csub/cistf --device 0
     # Example: training provided baseline on NTU RGB+D cross subject
     python main.py --config config/nturgbd-cross-subject/default.yaml --model model.baseline.Model--work-dir work_dir/ntu/csub/baseline --     device 0
 ~~~
 + To train model on NTU RGB+D 60/120 with bone or motion modalities, setting ```bone``` or ```vel``` arguments in the config file ```default.yaml``` or in the command line.
 ~~~
-    # Example: training AL-GCN on NTU RGB+D 120 cross subject under bone modality
-    python main.py --config config/nturgbd120-cross-subject/default.yaml --model model.algcn_ntu.py --train_feeder_args bone=True --test_feeder_args bone=True --work-dir work_dir/ntu120/csub/algcn_bone --device 0
+    # Example: training CI-STF on NTU RGB+D 120 cross subject under bone modality
+    python main.py --config config/nturgbd120-cross-subject/default.yaml --model model.cistf_ntu.py --train_feeder_args bone=True --test_feeder_args bone=True --work-dir work_dir/ntu120/csub/cistf_bone --device 0
 ~~~
 + To train model on NW-UCLA with bone or motion modalities, you need to modify ```data_path``` in ```train_feeder_args``` and ```test_feeder_args``` to "bone" or "motion" or "bone motion", and run
 ~~~
-    python main.py --config config/ucla/default.yaml --model model.algcn_ucla.py --work-dir work_dir/ucla/algcn_ucla --device 0
+    python main.py --config config/ucla/default.yaml --model model.cistf_ucla.py --work-dir work_dir/ucla/cistf_ucla --device 0
 ~~~
 + To train model on UAV-Human with bone or motion modalities, you need to modify ```data_path``` in ```train_feeder_args``` and ```test_feeder_args``` to "bone" or "motion" or "bone motion", and run
 ~~~
-    python main.py --config config/uav/default.yaml --model model.algcn_uav.py --work-dir work_dir/uav/algcn_uav --device 0
+    python main.py --config config/uav/default.yaml --model model.cistf_uav.py --work-dir work_dir/uav/cistf_uav --device 0
 ~~~
 
 ### Testing
@@ -130,8 +130,8 @@ The pre-processed UAV data can be referred [here](https://drive.google.com/drive
 + To ensemble the results of different modalities, run  
 
 ~~~
-    # Example: ensemble four modalities of AL-GCN on NTU RGB+D cross subject
-    python ensemble.py --dataset ntu/xsub --joint-dir work_dir/ntu/csub/algcn --bone-dir work_dir/ntu/csub/algcn_bone --joint-motion-dir     work_dir/ntu120/csub/algcn_motion --bone-motion-dir work_dir/ntu/csub/algcn_bone_motion
+    # Example: ensemble four modalities of CI-STF on NTU RGB+D cross subject
+    python ensemble.py --dataset ntu/xsub --joint-dir work_dir/ntu/csub/cistf --bone-dir work_dir/ntu/csub/cistf_bone --joint-motion-dir     work_dir/ntu120/csub/cistf_motion --bone-motion-dir work_dir/ntu/csub/cistf_bone_motion
 ~~~
 
 ### Pretrained model
